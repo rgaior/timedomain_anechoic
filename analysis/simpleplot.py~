@@ -1,0 +1,20 @@
+import numpy as np
+import pylab as P
+import matplotlib.pyplot as plt
+import sys
+import math
+sys.path.append('/home/romain/ara/timedomain/measurement/script/utils/')
+from utils import *
+import constants
+import rundef
+
+datatoplot  = sys.argv[1]
+
+filename = '/home/romain/ara/timedomain/measurement/script/results/' + datatoplot
+xy = loadnpzfile(filename)
+dt = xy[0][1] - xy[0][0]
+#filtered = myBPfilter(xy[1],dt, 0.1e9,1e9)
+plt.plot(xy[0],xy[1])
+#plt.plot(xy[0],filtered)
+plt.show()
+    
